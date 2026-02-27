@@ -3,7 +3,7 @@
 
 APPLICATION :
 {
-    name : 'SALOME-9.15.0-native'
+    name : 'SMITER-9.15.0-native'
     workdir : $LOCAL.workdir + $VARS.sep + $APPLICATION.name + '-' + $VARS.dist
     tag : 'V9_15_0'
     dev : 'no'
@@ -439,7 +439,7 @@ __overwrite__ :
         'APPLICATION.products.omniORBpy'                : {tag: '4.2.5',           base: 'no', section: 'version_4_2_5_CO10'                 }
         'APPLICATION.products.KERNEL'                   : {tag: 'V9_15_0',         base: 'no', section: 'version_V9_15_0_CO10'               }
         'APPLICATION.products.ParaView'                 : {tag: '5.13.2918b94391', base: 'no', section: 'version_5_13_2_MPI_CO10', hpc: 'yes'}
-        'APPLICATION.products.SOLVERLAB'                : {tag: 'V9_15_0',         base: 'no', section: 'version_V9_15_0_CO10'               }
+#        'APPLICATION.products.SOLVERLAB'                : {tag: 'V9_15_0',         base: 'no', section: 'version_V9_15_0_CO10'               }
         'APPLICATION.products.petsc'                    : {tag: '3.20.5',          base: 'no', section: 'version_3_20_5_CO10'                }
     }
     #
