@@ -109,13 +109,13 @@ APPLICATION :
         openmpi: 'native'
         openblas: 'native'
         openVKL : '0.11.0'
-        #openturns: '1.24'
+        openturns: '1.24'
         ospray : '2.4.0'
         packaging : 'native'
-        #pandas : 'native'
+        pandas : 'native'
         patsy : 'native'
         ParaView : {tag:'5.13.2918b94391', base: 'no',  section: 'version_5_13_2_MPI', hpc: 'yes'}
-        #PERSALYS : 'v18.0'
+        PERSALYS : 'v18.0'
         petsc : '3.20.5'
         Pillow : 'native'
         planegcs : '0.18-3cb6890'
@@ -203,11 +203,11 @@ APPLICATION :
         'ADAO'
         'ADAO_INTERFACE'
         'PARAVISADDONS'
-        #'OPENTURNS_SALOME'
+        'OPENTURNS_SALOME'
         'YDEFX'
         'pmml'
         'SALOMEBOOTSTRAP'
-        #'SOLVERLAB'
+        'SOLVERLAB'
         'TopIIVolMesh'
         #'TESTBASE'
         'CEATESTBASE'
@@ -382,6 +382,7 @@ __overwrite__ :
     {
          __condition__ : "VARS.dist in ['CO9']"
         'APPLICATION.rm_products'               : ['nose_py3','assimulo'] #
+        'APPLICATION.products.boost'            : {tag: '1.71.0', base: 'no', section: 'version_1_71_0_CO9'          } # spns #29324
         'APPLICATION.products.lapack'           : '3.8.0'
         'APPLICATION.products.nlopt'            : '2.7.0'
         'APPLICATION.products.qwt'              : '6.1.6'
@@ -418,6 +419,7 @@ __overwrite__ :
         'APPLICATION.products.rich'                     : 'native'
         'APPLICATION.products.embree'                   : '3.13.5'
         'APPLICATION.products.nlopt'                    : '2.7.0'
+        'APPLICATION.products.openblas'                 : '0.3.26'
         'APPLICATION.products.qwt'                      : '6.1.6'
         'APPLICATION.products.swig'                     : '4.0.2'
         'APPLICATION.products.hdf5'                     : '1.10.11'
@@ -438,6 +440,7 @@ __overwrite__ :
         'APPLICATION.products.PyFMI'                    : {tag: '2.13.1',          base: 'no', section: 'version_2_13_1_x86_64'              }
         'APPLICATION.products.omniORBpy'                : {tag: '4.2.5',           base: 'no', section: 'version_4_2_5_CO10'                 }
         'APPLICATION.products.KERNEL'                   : {tag: 'V9_15_0',         base: 'no', section: 'version_V9_15_0_CO10'               }
+        'APPLICATION.products.MEDCOUPLING'              : {tag: 'V9_15_0',         base: 'no', section: 'default_MPI_CO9'                    }
         'APPLICATION.products.ParaView'                 : {tag: '5.13.2918b94391', base: 'no', section: 'version_5_13_2_MPI_CO10', hpc: 'yes'}
 #        'APPLICATION.products.SOLVERLAB'                : {tag: 'V9_15_0',         base: 'no', section: 'version_V9_15_0_CO10'               }
         'APPLICATION.products.petsc'                    : {tag: '3.20.5',          base: 'no', section: 'version_3_20_5_CO10'                }
