@@ -15,9 +15,14 @@ cd $BUILD_DIR
 export PYTHONPATH=${PRODUCT_INSTALL}/lib/python${PYTHON_VERSION}/site-packages:$PYTHONPATH
 export PATH=${PRODUCT_INSTALL}/bin:$PATH
 
-WHEELS=('typing_extensions-4.11.0-py3-none-any.whl'
-        'meshio-5.3.5-py3-none-any.whl'
-       )
+WHEELS=()
+
+if ! ${PYTHONBIN} -c "import typing_extensions"; then
+    WHEELS+=('typing_extensions-4.11.0-py3-none-any.whl')
+fi
+
+WHEELS+=('meshio-5.3.5-py3-none-any.whl')
+
 for WHEEL in "${WHEELS[@]}"; do
     ${PYTHONBIN} -m pip install --cache-dir=$BUILD_DIR/cache/pip  $SOURCE_DIR/$WHEEL --no-deps --target=$PRODUCT_INSTALL/lib/python${PYTHON_VERSION}/site-packages
     if [ $? -ne 0 ]; then
@@ -73,6 +78,18 @@ if [ -f $fPy ]; then
 else
     echo "FATAL: could not find ANSYS MeshIO driver!"
     exit 1
+fi
+
+# bos #49114 - numpy2 issue see https://salsa.debian.org/science-team/python-meshio/-/blob/master/debian/patches/numpy2_PR1513.patch
+NUMPY_MAJ_VERSION=$($PYTHONBIN -c "import numpy; print(numpy.__version__)" | cut -d'.' -f1)
+echo ""
+if [[ $NUMPY_MAJ_VERSION -eq 2 ]]; then
+    echo "WARNING: numpy2 found. apply patch for dolfin"
+    fPy=$PRODUCT_INSTALL/lib/python${PYTHON_VERSION}/site-packages/meshio/dolfin/_dolfin.py
+    if [ -f $fPy ]; then
+        line=$(grep -nA0 "ET.SubElement(mesh_function" $fPy| cut -d':' -f1)
+        sed -i "${line}s/repr/str/" $fPy
+    fi
 fi
 
 echo
