@@ -382,14 +382,14 @@ __overwrite__ :
     {
          __condition__ : "VARS.dist in ['CO9']"
         'APPLICATION.rm_products'               : ['nose_py3','assimulo'] #
-        'APPLICATION.products.boost'            : {tag: '1.71.0', base: 'no', section: 'version_1_71_0_CO9'          } # spns #29324
+#        'APPLICATION.products.boost'            : {tag: '1.75.0', base: 'no' } # spns #29324
         'APPLICATION.products.lapack'           : '3.8.0'
         'APPLICATION.products.nlopt'            : '2.7.0'
         'APPLICATION.products.qwt'              : '6.1.6'
         'APPLICATION.products.PyQt'             : '5.15.3'
         'APPLICATION.products.swig'             : '4.0.2'
         'APPLICATION.products.opencv'           : '3.2.0'
-        'APPLICATION.products.openmpi'          : '4.1.5'
+        #'APPLICATION.products.openmpi'          : '4.1.5'
         'APPLICATION.products.sip'              : '5.5.0'
         'APPLICATION.products.h5py'             : {tag: '3.9.0',   base: 'no', section: 'version_3_9_0_no_pip' }
         #'APPLICATION.products.openturns'        : {tag: '1.24',    base: 'no', section: 'version_1_24_CO9'     }
