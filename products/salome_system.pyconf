@@ -19,7 +19,8 @@ default :
         rpm_dev : ["openssl-devel", "tbb-devel", "gcc", "make", "sed", "gcc-c++", "expat-devel", "fontconfig-devel", "flex",
                    "bison", "mesa-libGLU-devel", "libxcb-devel", "xcb-util-devel", "libxkbcommon-devel", "libxkbcommon-x11-devel",
                    "bzip2-devel", "libXi-devel", "libXmu-devel", "automake", "libtool", "libjpeg-turbo-devel", "cmake",
-                   "libXpm-devel", "libXft-devel", "sqlite-devel", "libcurl-devel", "libXt-devel", "libXcursor-devel", "tbb-devel", "libXinerama-devel"]
+                   "libXpm-devel", "libXft-devel", "sqlite-devel", "libcurl-devel", "libXt-devel", "libXcursor-devel", "tbb-devel",
+                   "libXinerama-devel", "libXrandr-devel"]
         apt : ["libbsd0", "libbz2-1.0", "libc6", "libdrm2", "libegl1", "libexif12", "libexpat1",
                "libfftw3-double3", "libfontconfig1", "libgl1", "libglu1-mesa", "libgomp1", "libgphoto2-6", "libice6",
                "libjbig0", "libltdl7", "liblzma5", "libnuma1", "libquadmath0",
@@ -31,7 +32,7 @@ default :
                    "libglu1-mesa-dev", "perl", "libxcb-dri2-0-dev", "libxkbcommon-dev", "libxkbcommon-x11-dev", "bzip2",
                    "libxi-dev", "libxt-dev", "libxmu-dev", "libxpm-dev", "libxft-dev", "automake", "libtool", "libjpeg-dev",
                    "cmake", "libicu-dev", "libopenmpi-dev", "libreadline-dev", "libhwloc-dev", "libsqlite3-dev", "libcurl4-openssl-dev",
-                   "libxt-dev", "libxcursor-dev", "libtbb-dev"]
+                   "libxt-dev", "libxcursor-dev", "libtbb-dev", "libxrandr-dev"]
 
         # specific to some platform(s)
         "CO7" :
@@ -205,6 +206,15 @@ default :
                        "qttools5-dev", "libqt5svg5-dev", "libqt5x11extras5-dev", "qtxmlpatterns5-dev-tools", "libopenmpi-dev",
                        "libpng-dev", "libtiff5-dev", "libgeotiff-dev", "libjpeg-dev", "libgif-dev", "libgeos-dev", "libsqlite3-dev", "libgdal-dev", "dvipng", "libxml++2.6-dev", "libfreetype-dev",
                        "libgmp-dev","libmpfr-dev", "libxinerama-dev","pypy3-lib"]
+        }
+        "UB26.04" :
+        {
+            apt : ["libdc1394-25", "libopenexr-3-1-30", "libwebp7", "gfortran-13", "libevent-2.1-7", "libpng16-16", "libgcc-15-dev", "libncurses6",
+                   "libffi8", "libtinfo6", "libgphoto2-port12", "libglx0", "libopengl0", "libzstd1", "libglvnd0", "openmpi-bin", "libgdal38", "libopenblas0-serial", "libtbb12",
+                   "libxml++2.6-2v5", "libfreetype6", "libncurses6"]
+            apt_dev : ["libtbb-dev", "cython3", "libfftw3-dev", "libopenblas-dev", "libpcre2-dev",
+                       "qttools5-dev", "libqt5svg5-dev", "libqt5x11extras5-dev", "qtxmlpatterns5-dev-tools", "libopenmpi-dev",
+                       "libpng-dev", "libtiff5-dev", "libgeotiff-dev", "libjpeg-dev", "libgif-dev", "libgeos-dev", "libsqlite3-dev", "libgdal-dev", "dvipng", "libxml++2.6-dev", "libfreetype-dev", "libgmp-dev","libmpfr-dev", "libxinerama-dev","pypy3-lib"]
         }
     }
     depend : []
