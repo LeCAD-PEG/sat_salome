@@ -98,6 +98,7 @@ APPLICATION :
         mesa : '19.0.8'
         MeshGems : {tag : '2.15-1', hpc : 'yes'}
         meshio : {tag: '5.3.5' , base: 'no', section : 'version_5_3_5_no_pip'}
+        metis  : {tag: '5.1.0' , base: 'no'}
         mpi4py: {tag: '3.1.0', base: 'no', section : 'version_3_1_0_no_pip'} 
         ParMetis : '4.0.3-p6'
         netgen : '5.3.1_with_CAS_7.8'
@@ -109,6 +110,7 @@ APPLICATION :
         numpydoc : '1.6.0'
         omniORB : '4.2.5'
         omniORBpy : '4.2.5'
+        openblas: '0.3.29'
         opencv : '3.2.0'
         openmpi : '4.0.3'
         openturns:  {tag : '1.24', section: 'version_1_24', hpc : 'yes'}

@@ -9,7 +9,7 @@ APPLICATION :
     dev : 'no'
     verbose :'no'
     debug : 'no'
-    base : 'no'
+    base : 'no' # 'salome9' + '-' + $VARS.dist #'no'
     python3 : 'yes'
     platform : ["FD38", "FD40", "FD42", "CO8", "CO9", "CO10", "DB10", "DB11", "DB12", "DB13", "UB22.04", "UB24.04"]
     environ :
@@ -388,8 +388,9 @@ __overwrite__ :
         'APPLICATION.products.PyQt'             : '5.15.3'
         'APPLICATION.products.swig'             : '4.0.2'
         'APPLICATION.products.opencv'           : '3.2.0'
-        'APPLICATION.products.openmpi'          : '4.1.5'
+        'APPLICATION.products.openmpi'          : '4.1.6'
         'APPLICATION.products.sip'              : '5.5.0'
+        'APPLICATION.products.tbb'              : '2021.9.0' # native 2020.3-9 brokes ospray        
         'APPLICATION.products.h5py'             : {tag: '3.9.0',   base: 'no', section: 'version_3_9_0_no_pip' }
         #'APPLICATION.products.openturns'        : {tag: '1.24',    base: 'no', section: 'version_1_24_CO9'     }
         'APPLICATION.products.patsy'            : {tag: '0.5.4',   base: 'no', section: 'version_0_5_4_no_pip' }
