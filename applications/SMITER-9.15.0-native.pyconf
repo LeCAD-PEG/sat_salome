@@ -4,7 +4,7 @@
 APPLICATION :
 {
     name : 'SMITER-9.15.0-native'
-    workdir : $LOCAL.workdir + $VARS.sep + $APPLICATION.name + '-' + $VARS.dist
+    workdir : $LOCAL.workdir
     tag : 'V9_15_0'
     dev : 'no'
     verbose :'no'

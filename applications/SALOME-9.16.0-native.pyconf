@@ -116,6 +116,7 @@ APPLICATION :
         omniORBpy : '4.2.5'
         ONNX: '1.22.0'
         opencv : 'native'
+        openblas : '0.3.29'
         openmpi: 'native'
         openVKL : '1.0.1'
         openturns: '1.25.1'
