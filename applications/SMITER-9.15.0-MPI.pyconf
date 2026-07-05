@@ -98,7 +98,7 @@ APPLICATION :
         mesa : '19.0.8'
         MeshGems : {tag : '2.15-1', hpc : 'yes'}
         meshio : {tag: '5.3.5' , base: 'no', section : 'version_5_3_5_no_pip'}
-        metis  : {tag: '5.1.0' , base: 'no'}
+        metis  : {tag: '5.1.0' , base: 'no', section : 'version_5_1_0_p10'}        
         mpi4py: {tag: '3.1.0', base: 'no', section : 'version_3_1_0_no_pip'} 
         ParMetis : '4.0.3-p6'
         netgen : '5.3.1_with_CAS_7.8'
