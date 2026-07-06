@@ -77,7 +77,7 @@ APPLICATION :
         gmsh :  {tag : '4.10.3', section :  'version_4_10_3_with_CAS_7_8_MPI', hpc : 'yes', base : 'no'}
         graphviz : '2.38.0'
         h5py : {tag: '3.9.0', base: 'no', section: 'version_3_9_0_no_pip'}
-        hdf5 : {tag : '1.10.5', hpc : 'yes'}
+        hdf5 : {tag : '1.14.6', hpc : 'yes'}
         idna : '2.7'
         imagesize : '1.4.1'
         importlib_metadata : '7.0.1'
@@ -94,7 +94,7 @@ APPLICATION :
         matplotlib : '3.8.2'
         mcut : 'b5b0ec6'
         mdurl: '0.1.2'
-        medfile : {tag : '4.2.0', hpc : 'yes'}
+        medfile : {tag : '6.0.1', hpc : 'yes'} # 4.2.0 freezes fails with test
         mesa : '19.0.8'
         MeshGems : {tag : '2.15-1', hpc : 'yes'}
         meshio : {tag: '5.3.5' , base: 'no', section : 'version_5_3_5_no_pip'}
