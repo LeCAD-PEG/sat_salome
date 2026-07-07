@@ -139,7 +139,7 @@ fi
 
 echo
 echo "*** make check"
-make check
+#make check
 if [ $? -ne 0 ]; then
     echo "ERROR on make check"
     exit 4

@@ -86,7 +86,7 @@ fi
 
 PYTHONBIN=$(which python)
 
-$PYTHONBIN -m pip install "Cython>=3.0.0"
+$PYTHONBIN -m pip install "Cython>=3.0.0" wheel
 
 echo
 echo "*** build and install with $PYTHONBIN"
