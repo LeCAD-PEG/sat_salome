@@ -71,9 +71,9 @@ fi
 
 CONFIGURE_FLAGS+=" --with-cuda=0" #
 
-if [ -n ${SAT_DEBUG} ]; then
+if [ -n "${SAT_DEBUG}" ]; then
    CONFIGURE_FLAGS+=" --PETSC_ARCH=installed-arch-linux2-c-debug"
-   CONFIGURE_FLAGS+=" --with-debugging=1"
+   CONFIGURE_FLAGS+=" --with-debugging=1" # default
 else
    CONFIGURE_FLAGS+=" --with-debugging=0"
    CONFIGURE_FLAGS+=" --PETSC_ARCH=installed-arch-linux2-c-opt"
@@ -154,11 +154,15 @@ if [ $? -ne 0 ]; then
 fi
 
 echo
-echo "*** make check"
-#make check
-if [ $? -ne 0 ]; then
-    echo "ERROR on make check"
-    exit 4
+if [ -n "$SAT_HPC" ]; then
+    echo "*** Skipping make check for HPC"
+else
+    echo "*** make check"
+    make check
+    if [ $? -ne 0 ]; then
+       echo "ERROR on make check"
+       exit 4
+    fi
 fi
 
 echo
