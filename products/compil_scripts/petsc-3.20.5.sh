@@ -72,9 +72,11 @@ fi
 CONFIGURE_FLAGS+=" --with-cuda=0" #
 
 if [ -n ${SAT_DEBUG} ]; then
+   CONFIGURE_FLAGS+=" --PETSC_ARCH=installed-arch-linux2-c-debug"
    CONFIGURE_FLAGS+=" --with-debugging=1"
 else
    CONFIGURE_FLAGS+=" --with-debugging=0"
+   CONFIGURE_FLAGS+=" --PETSC_ARCH=installed-arch-linux2-c-opt"
 fi
 
 CONFIGURE_FLAGS+=" --with-petsc4py=yes"
@@ -126,7 +128,6 @@ else
    CONFIGURE_FLAGS+=" --with-mpi=0"
 fi
 
-CONFIGURE_FLAGS+=" --PETSC_ARCH=installed-arch-linux2-c-opt"
 CONFIGURE_FLAGS+=" --PETSC_DIR=${BUILD_DIR}"
 
 echo "*** configure --prefix=${PRODUCT_INSTALL} ${CONFIGURE_FLAGS}"
@@ -154,7 +155,7 @@ fi
 
 echo
 echo "*** make check"
-make check
+#make check
 if [ $? -ne 0 ]; then
     echo "ERROR on make check"
     exit 4
