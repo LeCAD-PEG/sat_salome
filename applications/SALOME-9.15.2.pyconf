@@ -3,7 +3,7 @@
 
 APPLICATION :
 {
-    name       : 'SALOME-master'
+    name       : 'SALOME-9.15.2'
     workdir    : $LOCAL.workdir + $VARS.sep + $APPLICATION.name + '-' + $VARS.dist
     tag        : 'master'
     dev        : 'no'
@@ -213,54 +213,51 @@ APPLICATION :
         #xarray: '2023.12.0'
 
         # SALOME MODULES :
-        'CONFIGURATION'
-        'SALOME'
-        'SHAPER'
-        'SHAPERSTUDY'
-        'RESTRICTED'
+        'CONFIGURATION' : {tag: '1bb4f14', base: 'no' }
+        'SALOME' : {tag: 'c94a8bc', base: 'no' }
+        'SHAPER' : {tag: '59c5672c2', base: 'no' }
+        'SHAPERSTUDY' : {tag: '9686d68', base: 'no' }
         'LIBBATCH' : 'V2_6_1'
-        'KERNEL'
-        'MEDCOUPLING' : {tag:'master', base: 'no', section: 'default_MPI', hpc: 'yes'}
-        'GUI'
-        'CommonGeomLib'
-        'GEOM'
-        'SMESH'
-        'NETGENPLUGIN'
-        'BLSURFPLUGIN'
-        'GHS3DPLUGIN'
-        'HYBRIDPLUGIN'
-        'HexoticPLUGIN'
-        'GMSHPLUGIN'
-        'HEXABLOCK'
-        'HEXABLOCKPLUGIN'
-        'HOMARD'
-        'FIELDS'
-        'PARAVIS': {tag:'master', base: 'no', section: 'default_MPI', hpc: 'yes'}
-        'JOBMANAGER'
-        'YACS'
-        'YACSGEN'
-        'DOCUMENTATION'
-        'SAMPLES'
-        'COMPONENT'
-        'PYCALCULATOR'
-        'CALCULATOR'
-        'HELLO'
-        'PYHELLO'
-        'EFICAS'
-        'EFICAS_TOOLS'
-        'PY2CPP'
-        'ADAO'
-        'ADAO_INTERFACE'
-        'PARAVISADDONS'
-        'OPENTURNS_SALOME'
-        'YDEFX'
-        'pmml'
-        'pybatch'
-        'SALOMEBOOTSTRAP'
-        'SOLVERLAB'
-        'TopIIVolMesh'
-        #'TESTBASE'
-        #'CEATESTBASE'
+        'KERNEL' : {tag: 'e6e148b3', base: 'no' }
+        'MEDCOUPLING' : {tag:'8d9ee2e8', base: 'no', section: 'default_MPI', hpc: 'yes'}
+        'GUI' : {tag: '43535e67', base: 'no' }
+        'CommonGeomLib' : {tag: '8a4776f', base: 'no' }
+        'GEOM' : {tag: '97a9af3bd', base: 'no' }
+        'SMESH' : {tag: 'c3bdf4f42', base: 'no' }
+        'NETGENPLUGIN' : {tag: 'dc91794', base: 'no' }
+        'BLSURFPLUGIN' : {tag: 'f35d153', base: 'no' }
+        'GHS3DPLUGIN' : {tag: '4b82352', base: 'no' }
+        'HYBRIDPLUGIN' : {tag: 'c1f27aa', base: 'no' }
+        'HexoticPLUGIN' : {tag: 'cd56670', base: 'no' }
+        'GMSHPLUGIN' : {tag: 'ce69349', base: 'no' }
+        'HEXABLOCK' : {tag: 'b6ba61d', base: 'no' }
+        'HEXABLOCKPLUGIN' : {tag: '330749e', base: 'no' }
+        'HOMARD' : {tag: '99206d3', base: 'no' }
+        'FIELDS' : {tag: '6371fc60', base: 'no' }
+        'PARAVIS': {tag:'44fe8ff5', base: 'no', section: 'default_MPI', hpc: 'yes'}
+        'JOBMANAGER' : {tag: '9e8d2e1', base: 'no' }
+        'YACS' : {tag: 'ff26d195', base: 'no' }
+        'YACSGEN' : {tag: '120c295', base: 'no' }
+        'DOCUMENTATION' : {tag: 'f772770', base: 'no' }
+        'SAMPLES' : {tag: '63f5ed4', base: 'no' }
+        'COMPONENT' : {tag: '317476c', base: 'no' }
+        'PYCALCULATOR' : {tag: 'bdbb06a', base: 'no' }
+        'CALCULATOR' : {tag: 'b77a992', base: 'no' }
+        'HELLO' : {tag: 'f147b76', base: 'no' }
+        'PYHELLO' : {tag: '97507fd', base: 'no' }
+        'EFICAS' : {tag: '67b0785', base: 'no' }
+        'EFICAS_TOOLS' : {tag: '80bd763c', base: 'no' }
+        'PY2CPP' : {tag: '1360108', base: 'no' }
+        'ADAO' : {tag: 'e2d299b7', base: 'no' }
+        'ADAO_INTERFACE' : {tag: 'f90af87', base: 'no' }
+        'PARAVISADDONS' : {tag: '2398870', base: 'no' }
+        'OPENTURNS_SALOME' : {tag: '2d69967', base: 'no' }
+        'YDEFX' : {tag: '64fa78b', base: 'no' }
+        'pmml' : {tag: '3bb9ae6', base: 'no' }
+        'pybatch' : {tag: '65f6e08', base: 'no' }
+        'SALOMEBOOTSTRAP' : {tag: '06c77d2', base: 'no' }
+        'SOLVERLAB' : {tag: '317e747', base: 'no' }
+        'TopIIVolMesh' : {tag: '4624ffa', base: 'no' }
     }
     profile :
     {
@@ -274,7 +271,7 @@ APPLICATION :
     properties :
     {
         mesa_launcher_in_package : "yes"
-        git_server : 'tuleap'
+        git_server : 'github'
         pip : 'yes'
         pip_install_dir : 'python'
         single_install_dir : "no"
