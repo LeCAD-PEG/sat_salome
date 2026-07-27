@@ -59,6 +59,16 @@ default_win :
     cmake_options : " -DNO_SolveSpace=TRUE -DSWIG_EXECUTABLE=%SWIG_ROOT_DIR%/bin/swig.exe -DADD_COMPATIBILITY_TESTS=ON -DADD_MODELS_TESTS=ON -DADD_HDF_TESTS=ON"
 }
 
+default_FD44 :
+{
+    patches : ['SHAPER-planegcs-eigen3-FD44.patch']
+}
+
+version_V9_16_0_FD44 :
+{
+    patches : ['SHAPER-planegcs-eigen3-FD44.patch']
+}
+
 version_V9_12_0_DB12 :
 {
     patches : ['SHAPER-V9_12_0-numpy-1.20-np.float.patch']
