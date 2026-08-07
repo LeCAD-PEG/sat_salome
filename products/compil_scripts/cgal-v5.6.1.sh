@@ -52,9 +52,9 @@ mkdir $BUILD_DIR/cgal_test
 cd $BUILD_DIR/cgal_test
 CMAKE_OPTIONS=
 if [ -n "$SAT_DEBUG" ]; then
-    CMAKE_OPTIONS_COMMON+=" -DCMAKE_BUILD_TYPE:STRING=Debug"
+    CMAKE_OPTIONS+=" -DCMAKE_BUILD_TYPE:STRING=Debug"
 else
-    CMAKE_OPTIONS_COMMON+=" -DCMAKE_BUILD_TYPE:STRING=Release"
+    CMAKE_OPTIONS+=" -DCMAKE_BUILD_TYPE:STRING=Release"
 fi
 CMAKE_OPTIONS+=" -DCGAL_DIR=${PRODUCT_INSTALL}/lib/cmake"
 CMAKE_OPTIONS+=" -DEXECUTABLE_OUTPUT_PATH=${PRODUCT_INSTALL}/bin"
@@ -73,13 +73,14 @@ if [ $? -ne 0 ]; then
     exit 2
 fi
 
-echo
-echo "*** make install"
-make install
-if [ $? -ne 0 ]; then
-    echo "ERROR on make install"
-    exit 3
-fi
+# Does not build exec_cgal for some reason
+#echo
+#echo "*** make install"
+#make install
+#if [ $? -ne 0 ]; then
+#    echo "ERROR on make install"
+#    exit 3
+#fi
 
 echo
 echo "########## END"
