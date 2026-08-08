@@ -31,6 +31,7 @@ fi
 MAKE_OPTIONS="PETSC_DIR=${BUILD_DIR}"
 
 echo
+MAKE_OPTIONS=-j1 # Known error with 3.20.1 where fortran modules are not built in correct order
 echo "*** make" $MAKE_OPTIONS
 make $MAKE_OPTIONS
 if [ $? -ne 0 ]; then
