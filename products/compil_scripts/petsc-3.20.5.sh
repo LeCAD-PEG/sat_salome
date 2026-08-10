@@ -36,7 +36,8 @@ if [ -f /.dockerenv ]; then
 fi
 
 CONFIGURE_FLAGS=
-CONFIGURE_FLAGS+="--download-slepc=ext/slepc-3.20.1.tar.gz"
+#CONFIGURE_FLAGS+="--download-slepc=ext/slepc-3.20.1.tar.gz" # slepcmfnmod build order problem
+CONFIGURE_FLAGS+="--download-slepc=1 --download-slepc-commit=v3.20.2"
 
 if [ -f "${NATIVE_PATH}/liblapack.a" ] && [ "${SAT_lapack_IS_NATIVE}" == "1" ]; then
    CONFIGURE_FLAGS+=" --with-blaslapack=1"
