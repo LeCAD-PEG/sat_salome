@@ -3,7 +3,8 @@ default :
     name : "vtk"
     build_source : "script"
     compil_script :  $name + ".sh"
-    get_source : "git"
+    get_source : "archive"
+    archive_info : {archive_name : "VTK-" + $version + ".tar.gz"}
     git_info:
     {
       repositories :
